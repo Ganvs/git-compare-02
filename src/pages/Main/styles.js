@@ -7,7 +7,7 @@ export const Container = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   padding: 30px;
   margin: 80px auto;
-  transition: all 0.15s ease-out;
+  transition: all 0.2s ease-out;
 
   h1 {
     font-size: 20px;
