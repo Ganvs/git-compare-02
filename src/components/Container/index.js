@@ -21,7 +21,7 @@ const Container = styled.div`
   }
 
   &:hover {
-    transform: scale(1.01);
+    transform: scale(1.005);
   }
 `;
 
