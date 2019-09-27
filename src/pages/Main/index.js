@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import Container from '../../components/Container';
-import { Form, SubmitButton, List } from './styles';
+import { Form, SubmitButton, List, InputRepository } from './styles';
 
 export default class Main extends Component {
   state = {
     newRepo: '',
     repositories: [],
     loading: false,
-    invalidRepository: true,
+    invalidRepository: false,
   };
 
   // Carregar os dados do localStorage ('banco de dados' do navegador)
@@ -60,7 +60,7 @@ export default class Main extends Component {
     } catch (error) {
       this.setState({
         loading: false,
-        invalidRepository: false,
+        invalidRepository: true,
       });
     }
   };
@@ -76,11 +76,12 @@ export default class Main extends Component {
         </h1>
 
         <Form onSubmit={this.handleSubmit}>
-          <input
+          <InputRepository
             type="text"
             placeholder="Adicionar repositório (usuário/repositório)"
             value={newRepo}
             onChange={this.handleInputChange}
+            invalidRepository={invalidRepository}
           />
 
           <SubmitButton loading={loading}>
