@@ -13,7 +13,7 @@ export default class Main extends Component {
     newRepo: '',
     repositories: [],
     loading: false,
-    validRepository: true,
+    invalidRepository: true,
   };
 
   // Carregar os dados do localStorage ('banco de dados' do navegador)
@@ -60,13 +60,13 @@ export default class Main extends Component {
     } catch (error) {
       this.setState({
         loading: false,
-        validRepository: false,
+        invalidRepository: false,
       });
     }
   };
 
   render() {
-    const { newRepo, repositories, loading } = this.state;
+    const { newRepo, repositories, loading, invalidRepository } = this.state;
 
     return (
       <Container>
