@@ -16,18 +16,18 @@ const rotate = keyframes`
   }
 `;
 
-export const InputRepository = styled.input.attrs(props => ({
-  disabled: props.invalidRepository,
-}))`
+export const InputRepository = styled.input`
   flex: 1;
   border: 1px solid #eee;
   padding: 10px 15px;
   border-radius: 4px;
   font-size: 16px;
 
-  &[disabled] {
-    border: 1px solid #733;
-  }
+  ${props =>
+    props.invalidRepository &&
+    css`
+      border: 1px solid #733;
+    `}
 `;
 
 export const SubmitButton = styled.button.attrs(props => ({
